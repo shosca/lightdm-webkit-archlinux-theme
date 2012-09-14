@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<!-- mock.js is only required for local testing -->
+<script type="text/javascript" src="mock.js"></script> 
+<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onload="initialize()" oncontextmenu="return false;">
+  <div class="header"><span id="current_time" class="time"></span></div>
+  <div class="login_content">
+    <div class="login_container">
+      <div class="center">
+        <div id="user_template" class="user hidden smooth button">
+          <div class="user_image_wrapper"> <img class="user_image" src=""/> </div>
+          <span class="user_name"></span>
+        </div>
+      </div>
+      <div id="password_container" class="center hidden smooth">
+        <form action="javascript: provide_secret()" class="password_prompt">
+          <input id="password_entry" type="password" placeholder="Password" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="message" class="smooth">
+    <div id="message_content"></div>
+  </div>
+  <div class="footer">
+      <div id="action_template" class="action button">
+        <div class="action_image_wrapper"><img class="action_image" src=""/></div>
+        <span class="action_label"></span>
+      </div>
+  </div>
+</body>
+</html>

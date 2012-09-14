@@ -1,0 +1,156 @@
+body {
+    background-image: url('bg.jpg');
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    font-size: 10pt;
+    text-shadow: 1px 1px 3px black;
+    -webkit-user-select: none;
+}
+
+input {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0 0 2px 1px white;
+  
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #7DBEF1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.smooth {
+  -webkit-transition: visibility 0s, opacity 0.3s, left 0.4s;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-delay: 0.3s, 0s, 0s;
+}
+
+.center {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.header {
+  height: 30%;
+}
+
+.footer {
+  text-align: center;
+  height: 100px;
+}
+
+.footer, .header {
+  display: table-row;
+  width: 100%;
+  color: #B2B2B2;
+}
+
+.time {
+  float: right;
+  line-height: 25px;
+  font-size: 11pt;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.login_content {
+  display: table-row;
+}
+
+.login_container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#message {
+  display: table-row;
+  height: 80px;
+  -webkit-transition: visibility 0s, opacity 0.3s, height 0.3s;
+}
+
+#message.hidden {
+  height: 0px;
+}
+
+#message_content {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+  color: #EFEFEF;
+}
+
+#message_content.error {
+  color: #F55;
+}
+
+.user {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px; 
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.user:active {
+  opacity: 0.5;
+}
+
+.user_image_wrapper {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 60px;
+  box-shadow: 0 0 1px 1px #222, inset 0 0 2px 1px #222;
+  border: 2px solid #EEE;
+  background: -webkit-radial-gradient(circle, #FFF, #999);
+}
+
+.user_image_wrapper:hover {
+  box-shadow:  0 0 1px 1px #222, inset 0 0 2px 1px #222, 0 0 5px 2px #7DBEF1;
+}
+
+.user_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 60px;
+}
+
+.user_name {
+  display: block;
+  margin-top: 15px;
+  color: #EFEFEF;
+}
+
+.action {
+  display: inline-block;
+  width: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.action_image {
+  height: 50px;
+  width: 50px;
+
+  margin-bottom: 5px;
+}
+
+.action_label {
+  color: #B2B2B2;
+}

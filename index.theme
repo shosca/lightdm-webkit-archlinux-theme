@@ -1,0 +1,6 @@
+[theme]
+name=MacOsX
+description=Mac OSX like logon
+engine=lightdm-webkit-greeter
+url=index.html
+session=gnome
