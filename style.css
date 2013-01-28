@@ -1,27 +1,36 @@
-body {
-    background-image: url('bg.jpg');
-    display: table;
-    height: 100%;
-    width: 100%;
-    margin: 0;
+* {
+  font: normal 100% Cantarell;
+}
 
-    font-size: 10pt;
-    text-shadow: 1px 1px 3px black;
-    -webkit-user-select: none;
+body {
+  background: url('low_contrast_linen.png');
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: #EFEFEF;
+
+  font-size: 10pt;
+  text-shadow: 1px 1px 3px black;
+}
+
+body, span, div, img {
+  -webkit-user-select: none;
 }
 
 input {
   border: 1px solid white;
   border-radius: 4px;
   padding: 4px;
-  box-shadow: 0 0 2px 1px white;
-  
+  box-shadow: 0 0 1px 1px #222;
+
   -webkit-transition: box-shadow 0.3s ease-in-out;
 }
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 5px 2px #7DBEF1;
+  box-shadow: 0 0 1px 1px #222;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
 }
 
 a {
@@ -47,18 +56,31 @@ a {
 }
 
 .header {
-  height: 30%;
+  background-color: #333;
+  height: 55px;
+  border-bottom: 5px solid #08c;
+  box-shadow: 0 0 1px 1px #222;
+}
+
+.archlogo {
+  float: left !important;
+  margin: 10px !important;
+  padding: 0 !important;
+  height: 40px !important;
+  width: 190px !important;
+  background: url('archlogo.png') no-repeat;
 }
 
 .footer {
-  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   height: 100px;
+  text-align: center;
 }
 
 .footer, .header {
-  display: table-row;
   width: 100%;
-  color: #B2B2B2;
 }
 
 .time {
@@ -66,7 +88,7 @@ a {
   line-height: 25px;
   font-size: 11pt;
   margin-right: 10px;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 .login_content {
@@ -92,7 +114,6 @@ a {
   display: table-cell;
   vertical-align: top;
   text-align: center;
-  color: #EFEFEF;
 }
 
 #message_content.error {
@@ -115,14 +136,14 @@ a {
   width: 80px;
   height: 80px;
 
-  border-radius: 60px;
-  box-shadow: 0 0 1px 1px #222, inset 0 0 2px 1px #222;
-  border: 2px solid #EEE;
-  background: -webkit-radial-gradient(circle, #FFF, #999);
+  border-radius: 80px;
+  border: 5px solid #08c;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 .user_image_wrapper:hover {
-  box-shadow:  0 0 1px 1px #222, inset 0 0 2px 1px #222, 0 0 5px 2px #7DBEF1;
+  box-shadow:  0 0 5px 5px #08c;
+  -webkit-transition: all 0.2s ease-in-out;
 }
 
 .user_image {
@@ -134,7 +155,6 @@ a {
 .user_name {
   display: block;
   margin-top: 15px;
-  color: #EFEFEF;
 }
 
 .action {
