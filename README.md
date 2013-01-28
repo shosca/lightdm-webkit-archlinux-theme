@@ -1,17 +1,11 @@
 LightDM Webkit Arch Theme
 ===========================
 
-This is a LightDM theme for the Webkit greeter which tries to imitate the look and feel of the Mac OSX lion login screen
+This is a LightDM webkit greeter theme for Archlinux. Based on [LightDM-Webkit-MacOSX-Theme](http://github.com/Wattos/LightDM-Webkit-MacOSX-Theme)
 
 Installation Instructions
 -------------------------
-You will need LightDM as your login manager. On newer versions of Ubuntu this is already the default. Additionally you will require the webkit greeter. This is done by executing the following command in the command line:
-
-<pre>
-sudo apt-get install lightdm-webkit-greeter
-</pre>
-
-Once the installation finishes, you need to make the webkit greeter the default greeter. This is done by editing the lightdm configuration under:
+You will need lightdm as your login manager and the lightdm-webkit-greeter from AUR. You need to make the webkit greeter the default greeter. This is done by editing the lightdm configuration under:
 
 <pre>
 /etc/lightdm/lightdm.conf
