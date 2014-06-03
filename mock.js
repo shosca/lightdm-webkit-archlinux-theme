@@ -17,16 +17,21 @@ if (typeof lightdm == 'undefined') {
 	lightdm.can_restart= true;
 	lightdm.can_shutdown= true;
 
-	lightdm.users= [ 
-				   { name: "clarkk", real_name:"Superman", display_name: "Clark Kent", image :"", language: "en_US", layout: null, session: null, logged_in: false }, 
+	lightdm.users= [
+				   { name: "clarkk", real_name:"Superman", display_name: "Clark Kent", image :"", language: "en_US", layout: null, session: null, logged_in: false },
 	               { name: "brucew", real_name:"Batman", display_name: "Bruce Wayne", image :"/home/brokenImage.gif", language: "en_US", layout: null, session: null, logged_in: false},
 	               { name: "peterp", real_name:"Spiderman", display_name: "Peter Parker", image :"", language: "en_US", layout: null, session: null, logged_in: true},
 	               ]
 
+	lightdm.sessions= [
+					{ name: "LXQt Desktop", key: "lxqt" },
+					{ name: "KDE Plasma Desktop", key: "kdeplasma" },
+					]
+	lightdm.default_session=lightdm.sessions[0];
 	lightdm.num_users= lightdm.users.length;
 	lightdm.timed_login_delay= 0; //set to a number higher than 0 for timed login simulation
 	lightdm.timed_login_user= lightdm.timed_login_delay > 0 ? lightdm.users[0] : null;
-	
+
 	lightdm.get_string_property= function() {};
 	lightdm.get_integer_property= function() {};
 	lightdm.get_boolean_property= function() {};
@@ -41,7 +46,7 @@ if (typeof lightdm == 'undefined') {
 		}
 		_lightdm_mock_check_argument_length(arguments, 1);
 		var user= _lightdm_mock_get_user(lightdm.username);
-		
+
 		if (!user && secret == lightdm._username) {
 			lightdm.is_authenticated= true;
 			lightdm.authentication_user= user;
