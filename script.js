@@ -56,8 +56,24 @@ function show_error(text) {
 
 // called when the greeter is finished the authentication request
 function authentication_complete() {
+  var container = document.querySelector("#session_container");
+  var children = container.querySelectorAll("input");
+  var i = 0;
+  var key = "";
+  for (i = 0; i < children.length; i++) {
+    var child = children[i];
+    if (child.checked) {
+      key = child.value;
+      break;
+    }
+  }
+
   if (lightdm.is_authenticated) {
-    lightdm.login(lightdm.authentication_user, lightdm.default_session);
+    if (key === "") {
+      lightdm.login(lightdm.authentication_user, lightdm.default_session);
+    } else {
+      lightdm.login(lightdm.authentication_user, key);
+    }
   } else {
     show_error("Authentication Failed");
     start_authentication(selected_user);
@@ -103,11 +119,11 @@ function initialize_sessions() {
     label.innerHTML = session.name;
     radio.value = session.key;
 
-    if (session.key === lightdm.default_session.key) {
+    if (session.key === lightdm.default_session) {
       radio.checked = true;
     }
 
-    session_container.appendChild(s);
+    container.appendChild(s);
   }
 }
 
