@@ -119,7 +119,8 @@ function initialize_sessions() {
     label.innerHTML = session.name;
     radio.value = session.key;
 
-    if (session.key === lightdm.default_session) {
+    var default_session = 'default' == lightdm.default_session && 0 == i;
+    if (session.key === lightdm.default_session || default_session) {
       radio.checked = true;
     }
 
