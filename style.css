@@ -139,6 +139,9 @@ a {
   border-radius: 80px;
   border: 5px solid #08c;
   -webkit-transition: all 0.3s ease-in-out;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .user_image_wrapper:hover {
