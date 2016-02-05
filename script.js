@@ -98,7 +98,7 @@ function start_authentication(username) {
 function provide_secret() {
   show_message("Logging in...");
   entry = document.querySelector('#password_entry');
-  lightdm.provide_secret(entry.value);
+  lightdm.respond(entry.value);
 }
 
 function initialize_sessions() {
