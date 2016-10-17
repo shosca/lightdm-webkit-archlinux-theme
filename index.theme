@@ -1,6 +1,6 @@
 [theme]
 name=arch-session
 description=Archlinux logon
-engine=lightdm-webkit-greeter
+engine=lightdm-webkit2-greeter
 url=index.html
 session=lxqt

@@ -7,8 +7,10 @@ if (typeof lightdm == 'undefined') {
 	lightdm.layouts= [{name: "test", short_description: "test description", short_description:"really long epic description"}];
 	lightdm.default_layout= lightdm.layouts[0];
 	lightdm.layout= lightdm.layouts[0];
-	lightdm.sessions=[{key: "key1", name: "session 1", comment: "no comment"}, {key: "key2", name: "session 2", comment: "no comment"}];
-
+	lightdm.sessions= [
+					{ name: "LXQt Desktop", key: "lxqt" },
+					{ name: "KDE Plasma Desktop", key: "kdeplasma" },
+					]
 	lightdm.default_session=lightdm.sessions[0].key;
 	lightdm.authentication_user= null;
 	lightdm.is_authenticated= false;
@@ -18,15 +20,10 @@ if (typeof lightdm == 'undefined') {
 	lightdm.can_shutdown= true;
 
 	lightdm.users= [
-				   { name: "clarkk", real_name:"Superman", display_name: "Clark Kent", image :"", language: "en_US", layout: null, session: null, logged_in: false },
-	               { name: "brucew", real_name:"Batman", display_name: "Bruce Wayne", image :"/home/brokenImage.gif", language: "en_US", layout: null, session: null, logged_in: false},
-	               { name: "peterp", real_name:"Spiderman", display_name: "Peter Parker", image :"", language: "en_US", layout: null, session: null, logged_in: true},
+				   { name: "clarkk", username: "clarkk", real_name:"Superman", display_name: "Clark Kent", image :"", language: "en_US", layout: null, session: lightdm.sessions[1].key, logged_in: false },
+	               { name: "brucew", username: "brucew", real_name:"Batman", display_name: "Bruce Wayne", image :"/home/brokenImage.gif", language: "en_US", layout: null, session: lightdm.sessions[0].key, logged_in: false},
+	               { name: "peterp", username: "peterp", real_name:"Spiderman", display_name: "Peter Parker", image :"", language: "en_US", layout: null, session: null, logged_in: true},
 	               ]
-
-	lightdm.sessions= [
-					{ name: "LXQt Desktop", key: "lxqt" },
-					{ name: "KDE Plasma Desktop", key: "kdeplasma" },
-					]
 	lightdm.default_session=lightdm.sessions[0];
 	lightdm.num_users= lightdm.users.length;
 	lightdm.timed_login_delay= 0; //set to a number higher than 0 for timed login simulation

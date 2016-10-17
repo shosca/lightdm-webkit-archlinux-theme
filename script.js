@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var time_remaining = 0;
 var selected_user = null;
 var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
@@ -92,7 +93,20 @@ function timed_login(user) {
 function start_authentication(username) {
   lightdm.cancel_timed_login();
   selected_user = username;
-  lightdm.start_authentication(username);
+	var userObj = lightdm.users.filter((user) => (user.username)?user.username === username : user.name === username)[0];
+	if(typeof(userObj) !== "undefined" && userObj.session) {
+		Array.prototype.slice.call(document.querySelectorAll("input[type=radio][name=session]"), 0).forEach((radio) => {
+			radio.checked = false;
+			if(radio.value === userObj.session) radio.checked = true;
+		});
+	}
+	else {
+		Array.prototype.slice.call(document.querySelectorAll("input[type=radio][name=session]"), 0).forEach((radio) => {
+			radio.checked = false;
+			if(radio.value === lightdm.default_session.key) radio.checked = true;
+		});
+	}
+	lightdm.start_authentication(username);
 }
 
 function provide_secret() {
@@ -115,14 +129,18 @@ function initialize_sessions() {
     var label = s.querySelector(".session_label");
     var radio = s.querySelector("input");
 
-    console.log(s, session);
     label.innerHTML = session.name;
     radio.value = session.key;
+		radio.addEventListener("click", function() {
+			if(document.getElementById("password_entry").value != "") document.querySelectorAll("form.password_prompt")[0].submit();
+		});
 
-    var default_session = 'default' == lightdm.default_session && 0 == i;
+		/*
+    var default_session = 'default' == lightdm.default_session && 0 === i;
     if (session.key === lightdm.default_session || default_session) {
       radio.checked = true;
     }
+		*/
 
     container.appendChild(s);
   }
@@ -192,6 +210,19 @@ function initialize() {
   initialize_users();
   initialize_timer();
   initialize_sessions();
+	/*
+	var bg_image_dir = config.get_str("background_images");
+	console.log("image_dir", bg_image_dir);
+	if(bg_image_dir) {
+		var backgrounds = greeter_util.dirlist(bg_image_dir);
+		console.log("bg list", backgrounds);
+		if(backgrounds.length) {
+			var chosen = backgrounds[Math.floor(Math.random()*backgrounds.length)];
+			document.querySelectorAll("body")[0].style.backgroundImage = chosen;
+
+		}
+	}
+	*/
 }
 
 function on_image_error(e) {

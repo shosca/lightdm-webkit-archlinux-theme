@@ -3,7 +3,7 @@
 }
 
 body {
-  background: url('low_contrast_linen.png');
+  background: url('main-bg.png');
   display: table;
   height: 100%;
   width: 100%;
@@ -25,6 +25,63 @@ input {
   box-shadow: 0 0 1px 1px #222;
 
   -webkit-transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type=radio][name=session] {
+	margin: 0;
+	padding: 0;
+	outline:none;
+	opacity:0;
+}
+
+span.session_label:before {
+	content: "";
+	display: block;
+	width: 2em;
+	height: calc(1em + 8px);
+	border: 5px solid #08c;
+	border-radius: 10px 0 0 10px;
+	border-right: 0px none;
+	position: absolute;
+	left: -2.2em;
+	top: -5px;
+	-webkit-transition: background-color 0.3s ease-in-out;
+}
+
+span.session_label {
+	display: inline-block;
+	width: 10em;
+	text-align: left;
+	padding: .2em 0 .2em 1em;
+	border: 5px solid #08c;
+	border-radius: 0 10px 10px 0;
+	margin: .2em 0 .2em 0em;
+	border-left: 0;
+	position:relative;
+	-webkit-transition: background-color 0.3s ease-in-out;
+}
+
+#session_container:hover span.session_label:hover:before,
+#session_container:hover span.session_label:hover {
+	background-color:#222;
+}
+
+#session_container input:checked ~ span.session_label:before, 
+#session_container input:checked ~ span.session_label:hover:before {
+	background-color:#08c;
+}
+
+input[type=password] {
+	border-radius: 10px;
+	padding: .3em 1em;
+	-webkit-transition: box-shadow 0.3s ease-in-out;
+	border: 5px solid #08c;
+	width: 13.6em;
+	display: inline-block;
+	position: relative;
+	margin-bottom: .2em;
+	background: #222;
+	color: white;
 }
 
 input:focus {
