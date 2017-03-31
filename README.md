@@ -5,7 +5,7 @@ This is a LightDM webkit greeter theme for Archlinux. Based on [LightDM-Webkit-M
 
 Installation Instructions
 -------------------------
-You will need lightdm as your login manager and the lightdm-webkit-greeter from AUR. You need to make the webkit greeter the default greeter. This is done by editing the lightdm configuration under:
+You will need lightdm as your login manager and the lightdm-webkit2-greeter from AUR. You need to make the webkit greeter the default greeter. This is done by editing the lightdm configuration under:
 
 <pre>
 /etc/lightdm/lightdm.conf
@@ -15,7 +15,7 @@ and changing the greeter-session value to lightdm-webkit-greeter. lightdm.conf s
 
 <pre>
 [SeatDefaults]
-greeter-session=lightdm-webkit-greeter
+greeter-session=lightdm-webkit2-greeter
 allow-guest=false
 </pre>
 
@@ -25,7 +25,7 @@ The second step is to install the actual theme. This is done by copying the file
 /usr/share/lightdm-webkit/themes/arch
 </pre>
 
-Finally, change the /etc/lightdm/lightdm-webkit-greeter.conf file to contain the following line:
+Finally, change the /etc/lightdm/lightdm-webkit2-greeter.conf file to contain the following line:
 
 <pre>
 webkit-theme=arch
